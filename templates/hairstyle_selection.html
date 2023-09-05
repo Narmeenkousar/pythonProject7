@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Select a Hairstyle</title>
+  </head>
+  <body>
+    <h1>Recommended Hairstyles</h1>
+    <form action="http://127.0.0.1:5000/apply_hairstyle" method="POST">
+      <select name="selected_hairstyle">
+        {% for hairstyle in hairstyles %}
+        <option value="{{ hairstyle }}">{{ hairstyle }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Apply Hairstyle</button>
+    </form>
+
+    <!-- Display the uploaded image -->
+    <h2>Uploaded Image</h2>
+    <img src="{{ uploaded_image }}" alt="Uploaded Image" />
+
+    <!-- Display the processed image -->
+    <h2>Processed Image</h2>
+    <img src="{{ processed_image }}" alt="Processed Image" />
+  </body>
+</html>
